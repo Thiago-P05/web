@@ -6,13 +6,37 @@ interface ServiceCardProps {
   icon: React.ReactNode
   className?: string
   delay?: number
+  variant?: "default" | "neon" | "neon-blue" | "neon-green" | "neon-red"
 }
 
-export const ServiceCard = ({ title, description, icon, className, delay = 0 }: ServiceCardProps) => {
+export const ServiceCard = ({ 
+  title, 
+  description, 
+  icon, 
+  className, 
+  delay = 0, 
+  variant = "default" 
+}: ServiceCardProps) => {
+  const getVariantClasses = () => {
+    switch (variant) {
+      case "neon":
+        return "neon-glass";
+      case "neon-blue":
+        return "neon-glass-blue";
+      case "neon-green":
+        return "neon-glass-green";
+      case "neon-red":
+        return "neon-glass-red";
+      default:
+        return "bg-card border border-line-700 card-hover";
+    }
+  };
+
   return (
     <div
       className={cn(
-        "p-6 rounded-xl bg-card border border-line-700 card-hover stagger-fade",
+        "p-6 rounded-xl stagger-fade",
+        getVariantClasses(),
         className
       )}
       style={{ animationDelay: `${delay}ms` }}

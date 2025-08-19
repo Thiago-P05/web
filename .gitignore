@@ -1,0 +1,40 @@
+# --- Carpetas de dependencias ---
+node_modules/
+
+# --- Build / salida de producción ---
+dist/
+build/
+.next/
+out/
+
+# --- Archivos de configuración locales ---
+.env
+.env.*          # .env.development, .env.local, etc.
+*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Cache de herramientas ---
+.cache/
+.vite/
+.vercel/
+.eslintcache
+turbo/
+coverage/
+
+# --- Sistemas operativos ---
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# --- IDEs / editores ---
+.vscode/
+.idea/
+*.swp           # Vim
+*.suo           # Visual Studio
+
+# --- Otros binarios pesados ---
+*.zip
+*.tgz
+*.rar

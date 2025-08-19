@@ -9,12 +9,12 @@
 @layer base {
   :root {
     /* Auctus Growth Dark Theme Colors */
-    --bg-950: 231 13% 4%;         /* #0A0A0B */
-    --bg-900: 228 14% 7%;         /* #0F1113 */
-    --bg-800: 222 15% 10%;        /* #15181B */
-    --fg-100: 216 7% 91%;         /* #E6E8EA */
-    --fg-300: 214 11% 75%;        /* #B8BDC3 */
-    --line-700: 220 9% 16%;       /* #23272B */
+    --bg-950: 0 0% 0%;           /* #000000 - Negro puro */
+    --bg-900: 0 0% 2%;           /* #050505 - Negro casi puro */
+    --bg-800: 0 0% 4%;           /* #0A0A0A - Negro muy oscuro */
+    --fg-100: 216 7% 91%;        /* #E6E8EA */
+    --fg-300: 214 11% 75%;       /* #B8BDC3 */
+    --line-700: 220 9% 8%;      /* Bordes más oscuros */
     
     /* Accent Blues (minimal usage) */
     --ac-500: 217 91% 60%;        /* #3B82F6 */
@@ -65,7 +65,7 @@
   
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    background: radial-gradient(1200px 800px at 70% -10%, hsl(var(--bg-800)) 0%, hsl(var(--bg-950)) 60%, hsl(var(--bg-950)) 100%);
+    background: #000000 !important;
     position: relative;
     min-height: 100vh;
   }
@@ -167,6 +167,128 @@
     @apply -translate-y-1;
     box-shadow: 0 20px 40px -8px hsl(var(--bg-950) / 0.6);
   }
+
+  /* Neon Glass Effect */
+  .neon-glass {
+    background: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.37),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.1) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.5s ease;
+    z-index: 1;
+  }
+
+  .neon-glass:hover::before {
+    left: 100%;
+  }
+
+  .neon-glass:hover {
+    border: 1px solid rgba(59, 130, 246, 0.5) !important;
+    box-shadow: 
+      0 8px 32px 0 rgba(59, 130, 246, 0.3),
+      0 0 20px rgba(59, 130, 246, 0.2),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-2px);
+  }
+
+  /* Variante con borde azul */
+  .neon-glass-blue {
+    background: rgba(59, 130, 246, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.2) !important;
+    box-shadow: 
+      0 8px 32px 0 rgba(59, 130, 246, 0.1),
+      inset 0 1px 0 0 rgba(59, 130, 246, 0.1) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-glass-blue:hover {
+    border: 1px solid rgba(59, 130, 246, 0.6) !important;
+    box-shadow: 
+      0 12px 40px 0 rgba(59, 130, 246, 0.3),
+      0 0 30px rgba(59, 130, 246, 0.3),
+      inset 0 1px 0 0 rgba(59, 130, 246, 0.2) !important;
+    transform: translateY(-4px);
+  }
+
+  /* Variante verde */
+  .neon-glass-green {
+    background: rgba(34, 197, 94, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(34, 197, 94, 0.2) !important;
+    box-shadow: 
+      0 8px 32px 0 rgba(34, 197, 94, 0.1),
+      inset 0 1px 0 0 rgba(34, 197, 94, 0.1) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-glass-green:hover {
+    border: 1px solid rgba(34, 197, 94, 0.6) !important;
+    box-shadow: 
+      0 12px 40px 0 rgba(34, 197, 94, 0.3),
+      0 0 30px rgba(34, 197, 94, 0.3),
+      inset 0 1px 0 0 rgba(34, 197, 94, 0.2) !important;
+    transform: translateY(-4px);
+  }
+
+  /* Variante roja */
+  .neon-glass-red {
+    background: rgba(239, 68, 68, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(239, 68, 68, 0.2) !important;
+    box-shadow: 
+      0 8px 32px 0 rgba(239, 68, 68, 0.1),
+      inset 0 1px 0 0 rgba(239, 68, 68, 0.1) !important;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-glass-red:hover {
+    border: 1px solid rgba(239, 68, 68, 0.6) !important;
+    box-shadow: 
+      0 12px 40px 0 rgba(239, 68, 68, 0.3),
+      0 0 30px rgba(239, 68, 68, 0.3),
+      inset 0 1px 0 0 rgba(239, 68, 68, 0.2) !important;
+    transform: translateY(-4px);
+  }
+
+  /* Asegurar que el contenido esté encima del efecto */
+  .neon-glass > *,
+  .neon-glass-blue > *,
+  .neon-glass-green > *,
+  .neon-glass-red > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 @layer utilities {
@@ -201,15 +323,5 @@
     .parallax-blob {
       display: none;
     }
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 }

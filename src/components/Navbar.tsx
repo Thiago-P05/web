@@ -18,10 +18,8 @@ export const Navbar = () => {
 
   const navItems = [
     { label: "Servicios", href: "#servicios" },
-    { label: "Proceso", href: "#proceso" },
     { label: "Stack", href: "#stack" },
     { label: "Seguridad", href: "#seguridad" },
-    { label: "Industrias", href: "#industrias" },
     { label: "FAQ", href: "#faq" },
     { label: "Contacto", href: "#contacto" }
   ]
@@ -38,7 +36,7 @@ export const Navbar = () => {
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
               <span className="text-primary-foreground font-tight font-bold text-sm">AG</span>
             </div>
-            <span className="ml-2 text-lg font-tight font-bold text-fg-100">
+            <span className="ml-2 text-l font-tight font-bold text-fg-100">
               Auctus Growth
             </span>
           </div>
