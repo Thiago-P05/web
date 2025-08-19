@@ -1,0 +1,1 @@
+yaml\nname: Deploy to GitHub Pages\non:\n push:\n branches: [main]\n\njobs:\n build-and-deploy:\n runs-on: ubuntu-latest\n steps:\n - uses: actions/checkout@v3\n - uses: pnpm/action-setup@v2\n with: { version: 8 }\n - run: pnpm install\n - run: pnpm run build\n - uses: peaceiris/actions-gh-pages@v3\n with:\n github_token: ${{ secrets.GITHUB_TOKEN }}\n publish_dir: ./dist\n
