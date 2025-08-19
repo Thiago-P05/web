@@ -6,8 +6,13 @@ import { componentTagger } from 'lovable-tagger'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // 👇 1 línea, sin prefijos raros ni backslash
-  base: '/web/',              // <- nombre exacto de tu repo
+  // 👇 sub-path donde vive tu site
+  base: '/web/',
+
+  // 👉 genera sourcemaps en producción
+  build: {
+    sourcemap: true,
+  },
 
   server: {
     host: '::',
