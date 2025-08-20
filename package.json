@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
 
-  "homepage": "https://thiago-p05.github.io/web/",      // ← GitHub Pages usará esta URL para generar rutas absolutas
+  "homepage": "https://thiago-p05.github.io/web/",      
 
   "scripts": {
     "dev": "vite",
@@ -13,8 +13,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
 
-    "predeploy": "npm run build",                       // ← compila la carpeta dist/ antes de publicar
-    "deploy": "gh-pages -d dist"                        // ← sube dist/ a la rama gh-pages
+    "predeploy": "npm run build",                       
+    "deploy": "gh-pages -d dist"                        
   },
 
   "dependencies": {
