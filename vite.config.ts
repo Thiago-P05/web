@@ -4,24 +4,19 @@ import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import { componentTagger } from 'lovable-tagger'
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // 👇 sub-path donde vive tu site
-  base: '/web/',
+export default defineConfig(({ mode }) => ({      // ← ahora recibimos mode
+  base: '/web/',                                  // GitHub Pages subcarpeta
 
-  // 👉 genera sourcemaps en producción
-  build: {
-    sourcemap: true,
-  },
+  build: { sourcemap: true },                     // mapas de origen en prod
 
   server: {
-    host: '::',
+    host: '0.0.0.0',                              // o true
     port: 8080,
   },
 
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
+    mode === 'development' && componentTagger(),  // solo en dev
   ].filter(Boolean),
 
   resolve: {
@@ -29,4 +24,4 @@ export default defineConfig(({ mode }) => ({
       '@': path.resolve(__dirname, './src'),
     },
   },
-}))
+}));
